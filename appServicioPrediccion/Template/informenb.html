@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Informe del Cliente </title>
+    <style>
+
+        h1 {
+            color: #007bff;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            margin: 10px 0;
+            font-weight: bold;  /* Añadir negrita */
+            font-family: 'Arial', sans-serif;  /* Cambiar el tipo de letra */
+        }
+    </style>
 </head>
 <body>
-<h1> Resultado con el Naibe Bayes</h1>
+<h1> Resultado con el Naive Bayes</h1>
 {% csrf_token %}
-El cliente : {{e}}
+segun el estudio previamente realizado el cliente : {{e}}
 </body>
 </html>

@@ -3,7 +3,7 @@ from pathlib import Path
 
 DEBUG = True #False para producción
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #En producción con DEBUG = False: 
 #ALLOWED_HOSTS = ['127.0.0.1','nombre_dominio','ip_específica','0.0.0.0']
