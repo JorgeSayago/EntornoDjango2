@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+        }
+
+        h2 {
+            color: #2c3e50; /* Cambiar color */
+            font-family: 'Open Sans', sans-serif; /* Cambiar tipo de letra */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2> Rotación de clientes de telecomunicaciones </h2>
+<form id="myForm" method="post">
+    {% csrf_token %}
+    <label for="gender">Género:</label>
+    <select id="gender" name="gender" required>
+        <option value="Male">Masculino</option>
+        <option value="Female">Femenino</option>
+    </select>
+    <label for="SeniorCitizen">Ciudadadno mayor:</label>
+    <select id="SeniorCitizen" name="SeniorCitizen" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="Partner">Pareja:</label>
+    <select id="Partner" name="Partner" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="Dependents">Dependientes:</label>
+    <select id="Dependents" name="Dependents" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    
+    <label for="tenure">Meses en la empresa:</label>
+    <input type="number" id="tenure" name="tenure" required>
+
+    <label for="PhoneService">Servicio telefonico:</label>
+    <select id="PhoneService" name="PhoneService" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="MultipleLines">MultipleLines:</label>
+    <select id="MultipleLines" name="MultipleLines" required>
+        <option value="-1">sin servicio telefonico</option>
+        <option value="0">No</option>
+        <option value="1">si</option>
+    </select>
+    <label for="InternetService">Servicio de internet:</label>
+    <select id="InternetService" name="InternetService" required>
+        <option value="DSL">DSL</option>
+        <option value="Fiber optic">Fibra optica</option>
+        <option value="No">no</option>
+    </select>
+    <label for="OnlineSecurity">Seguridad Online:</label>
+    <select id="OnlineSecurity" name="OnlineSecurity" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="OnlineBackup">Copia de Seguridad :</label>
+    <select id="OnlineBackup" name="OnlineBackup" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="DeviceProtection">Proteccion de dispositivo:</label>
+    <select id="DeviceProtection" name="DeviceProtection" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="TechSupport">Soporte tecnico:</label>
+    <select id="TechSupport" name="TechSupport" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="StreamingTV">Streaming tv</label>
+    <select id="StreamingTV" name="StreamingTV" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="StreamingMovies">Streaming movies</label>
+    <select id="StreamingMovies" name="StreamingMovies" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="Contract">Contrato:</label>
+    <select id="Contract" name="Contract" required>
+        <option value="Month-to-month">mes a mes</option>
+        <option value="One year">un año</option>
+        <option value="Two year">dos años</option>
+    </select>
+    <label for="PaperlessBilling">Factura electronica</label>
+    <select id="PaperlessBilling" name="PaperlessBilling" required>
+        <option value="1">Sí</option>
+        <option value="0">No</option>
+    </select>
+    <label for="PaymentMethod">Metodo de pago:</label>
+    <select id="PaymentMethod" name="PaymentMethod" required>
+        <option value="Electronic check">Cheque electronico</option>
+        <option value="Mailed check">cheque enviado por correo</option>
+        <option value="Bank transfer (automatic)">transferencia bancaria</option>
+        <option value="Credit card (automatic)">tarjeta de credito</option>
+    </select>
+    <label for="MonthlyCharges">cargos mensuales:</label>
+    <input type="number" id="MonthlyCharges" name="MonthlyCharges" step="0.01" required>
+    <label for="TotalCharges">cargos totales:</label>
+    <input type="number" id="TotalCharges" name="TotalCharges" step="0.01" required>
+
+    <div class="form-group col-md-4">
+        <label for="mod" class="font-weight-bold">Modelo de predicción</label>
+        <select class="form-control custom-select" id="modelo" name="modelo" required>
+            <option value="-1">Selecione un Modelo</option>
+            <option value="0">Red Neuronal</option>
+            <option value="1">Naive Bayes</option>
+        </select>
+    </div>
+
+   <!-- <p><input type="submit" value="PREDECIR"></p>--> 
+
+   <div class="text-center">
+    <button type="submit" class="btn btn-primary">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none;"></span>
+        ENVIAR
+    </button>
+   </div>
+</form>
+</body>
+</html>
+
+<script>
+    document.getElementById('modelo').addEventListener('change', function() {
+        var modeloSeleccionado = this.value;
+        var form = document.getElementById('myForm');
+
+        console.log("Entro")
+
+        if (modeloSeleccionado === '0') {  // Red Neuronal
+            form.action = "{% url 'predecir' %}";
+        } else if (modeloSeleccionado === '1') {  // Naive Bayes
+            form.action = "{% url 'predecirNB' %}";
+        } else {
+            // Si el modelo seleccionado no es 0 ni 1, deshabilitar el formulario o tomar otra acción según sea necesario
+            form.action = "";
+            input.setCustomValidity('Seleccione un Modelo');
+        }
+    });
+</script>
+

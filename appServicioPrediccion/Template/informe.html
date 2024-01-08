@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Informe del Cliente </title>
+    <style>
+
+        h1 {
+            color: #007bff;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p {
+            color: #666;
+            margin: 10px 0;
+            font-weight: bold;  /* Añadir negrita */
+            font-family: 'Arial', sans-serif;  /* Cambiar el tipo de letra */
+        }
+    </style>
+</head>
+<body>
+<h1> Resultado con la red neuronal</h1>
+<p> 
+{% csrf_token %}
+Dado lo analisis previos llegamos a la conclusion que el cliente : {{e}}
+
+</p>
+</body>
+</html>
